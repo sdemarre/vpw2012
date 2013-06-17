@@ -5,7 +5,7 @@
   :description "Describe vpw2012 here"
   :author "Your Name <your.name@example.com>"
   :license "Specify license here"
-  :depends-on (:iterate :split-sequence :let-plus)
+  :depends-on (:iterate :split-sequence)
   :components ((:file "package")
                (:file "vpw2012")
 	       (:file "read-utils")
