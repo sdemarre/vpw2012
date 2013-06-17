@@ -4,7 +4,7 @@
   (iter (for line in-file filename using #'read-line)
 	(collect line)))
 
-(defparameter *problem-directory* #P"c:/Users/serge.demarre/AppData/Roaming/src/lisp/systems/vpw2012/data/")
+(defparameter *problem-directory* #P"/home/serge/src/lisp/my-systems/vpw2012/data/")
 
 (defun example-input-lines (problemname)
   (file-lines (merge-pathnames *problem-directory* (format nil "~a-voorbeeld.input.txt" problemname))))
@@ -23,3 +23,12 @@
 
 (defun contest-names ()
   (list "dominos" "hercules" "morse" "veelhoeken" "woordsnippers"))
+
+(defmacro with-contest-entries ((contest-name line-producer) &body body)
+  (let ((contest-lines (gensym))
+	(number-problems (gensym)))
+    `(let* ((,contest-lines (contest-input-lines ,contest-name))
+	    (,line-producer (make-line-producer ,contest-lines))
+	    (,number-problems (parse-integer (funcall ,line-producer))))
+       (iter (for problem from 1 to ,number-problems)
+	     ,@body))))

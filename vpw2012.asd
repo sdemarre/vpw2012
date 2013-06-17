@@ -10,5 +10,6 @@
 	       (:file "vpw2012")
 	       (:file "read-utils")
 	       (:file "rbt-solver")
-	       (:file "dominos")))
-
+	       (:file "dominos")
+	       (:file "hercules")
+	       (:file "morse")))
