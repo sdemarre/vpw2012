@@ -4,7 +4,8 @@
   (iter (for line in-file filename using #'read-line)
 	(collect (remove #\Return line))))
 
-(defparameter *problem-directory* #P"c:/users/serge.demarre/appdata/roaming/src/lisp/systems/vpw2012/data/")
+#+linux(defparameter *problem-directory* #P"/home/serge/src/lisp/my-systems/vpw2012/data/")
+#-linux(defparameter *problem-directory* #P"c:/users/serge.demarre/appdata/roaming/src/lisp/systems/vpw2012/data/")
 
 (defun example-input-lines (problemname)
   (file-lines (merge-pathnames *problem-directory* (format nil "~a-voorbeeld.input.txt" problemname))))
