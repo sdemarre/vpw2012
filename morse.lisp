@@ -17,5 +17,5 @@
       (reduce #'+ number-dashes-and-dots))))
 
 (defun solve-morse-problems ()
-  (with-contest-entries ("morse" line-producer)
+  (with-problem-entries ("morse" line-producer)
     (format t "~a~%" (solve-morse-problem line-producer))))

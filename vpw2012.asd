@@ -12,4 +12,5 @@
 	       (:file "rbt-solver")
 	       (:file "dominos")
 	       (:file "hercules")
-	       (:file "morse")))
+	       (:file "morse")
+	       (:file "veelhoeken")))
